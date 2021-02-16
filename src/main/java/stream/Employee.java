@@ -1,7 +1,6 @@
 package stream;
 
 import lombok.Data;
-import stream.Position;
 
 
 @Data
@@ -13,6 +12,9 @@ public class Employee {
     private int age;
     private Position position;
 
+
+
+
     public Employee(String firstName, String lastName, int id, int age, Position position) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,43 +23,12 @@ public class Employee {
         this.position = position;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
+    public String getFirstName() { return firstName; }
+    public Position getPosition() { return position; }
+    public String getLastName() { return lastName; }
+    public void setAge(int age) { this.age = age; }
+    public int getAge() { return age; }
+    public int getId() { return id; }
 }
