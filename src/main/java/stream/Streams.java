@@ -18,7 +18,7 @@ public class Streams {
     private List<Department> departmentList;
     private List<Employee> employeeList;
 
-    
+
 
     public Streams() {
         createdLists();
@@ -131,7 +131,8 @@ public class Streams {
         // считаем максимум для списка сотрудников(Объектов)
         // без - get приходит Optional, а так Employee и у него берем - Ageж
         Optional<Employee> employeeOptional = employeeList.stream().max(Comparator.comparingInt(Employee::getAge));
-        System.out.println("Max age - " + employeeOptional);
+        System.out.println("Max age - " + employeeOptional.toString());
+
 
         // в однопоточных стримах разницы нет обы вернут первые элементы
         // в многопоточном же  - findAny вернет произвольный элемен (не обязательно первый)
