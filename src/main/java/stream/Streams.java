@@ -91,7 +91,7 @@ public class Streams {
         employeeList.forEach(employee -> System.out.println(employee.getFirstName()));
 
         // в отличии от колекций стримы поддерживают метод - forEachOrdered
-        // если мы работаем с параллельным стримомм гарантирован вес обход элементов
+        // если мы работаем с параллельным стримомм гарантирован весь обход элементов
         employeeList.stream().forEachOrdered(employee -> System.out.println(employee.getPosition()));
 
         // преобразовываем стрим в любую другую колекцию
@@ -99,7 +99,7 @@ public class Streams {
         employeeList.stream().collect(Collectors.toList());
         employeeList.stream().toArray();
 
-        // ... и даже в меп, единственное нудо указать что будет ключеи, а что значением
+        // ... и даже в меп, единственное надо указать что будет ключем, а что значением
         Map<Integer, String> collect = employeeList.stream().collect(Collectors.toMap(
                 emp -> emp.getId(),
                 emp -> String.format("%s %s", emp.getLastName(), emp.getFirstName())
@@ -111,7 +111,7 @@ public class Streams {
         System.out.println(i);
 
         // редюсим уже объекты
-        // в итоге получаем дерево объектов делей и родителей
+        // в итоге получаем дерево объектов детей и родителей
         // для прохождения и нахождения детей и родителей пришлось сделать метод - reducer и передать его
         Optional<Department> optionalDepartment = (departmentList.stream().reduce(this::reducer));
         System.out.println(optionalDepartment);
@@ -134,7 +134,7 @@ public class Streams {
         System.out.println("Max age - " + employeeOptional.toString());
 
 
-        // в однопоточных стримах разницы нет обы вернут первые элементы
+        // в однопоточных стримах разницы нет оба вернут первые элементы
         // в многопоточном же  - findAny вернет произвольный элемен (не обязательно первый)
         // findFirst - вернет первый элемент
         System.out.println(
